@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Toko Online</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+
+            // Update active link
+            const links = document.querySelectorAll('nav ul.nav-menu li a');
+            links.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector('nav ul.nav-menu li a[href="#' + sectionId + '"]').classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('home');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">6six6</h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home" onclick="showSection('home'); return false;" class="active fire-effect">Home</a></li>
+                    <li><a href="#produk" onclick="showSection('produk'); return false;">Produk</a></li>
+                    <li><a href="#kontak" onclick="showSection('kontak'); return false;">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="hero">
+                <h1>Selamat Datang di 6six6 Store</h1>
+                <p class="tagline">Temukan gaya terbaikmu dengan koleksi limited edition kami.</p>
+                <a href="#produk" class="hero-btn" onclick="showSection('produk'); return false;">Lihat Produk</a>
+            </div>
+            
+        </section>
+
+        <!-- Produk Section -->
+        <section id="produk" style="display:none;">
+            <h2>Detail Produk</h2>
+            <div class="product-list">
+                <article class="product-card">
+                    <img src="images/produk 1.jpeg" alt="Produk 1" />
+                    <h3>devil eyes</h3>
+                    <p class="price">Rp 660.000</p>
+                    <p class="description">produk yang dapat menambah kepercayaan diri pengguna nya.</p>
+                </article>
+                <article class="product-card">
+                    <img src="images/produk 2.jpg" alt="Produk 2" />
+                    <h3>black vest</h3>
+                    <p class="price">Rp 333.000</p>
+                    <p class="description">produk ini membuat penggunanya kebal peluru.</p>
+                </article>
+                <article class="product-card">
+                    <img src="images/produk 4.jpeg" alt="Produk 3" />
+                    <h3>black boys</h3>
+                    <p class="price">Rp 440.000</p>
+                    <p class="description">membuat penggunanya dikenal oleh gang nigga .</p>
+                </article>
+                <article class="product-card">
+                    <img src="images/produk 3.jpeg" alt="Produk 4" />
+                    <h3>emo style</h3>
+                    <p class="price">Rp 250.000</p>
+                    <p class="description">produk yang memberikan flash back.</p>
+                </article>
+                <article class="product-card">
+                    <img src="images/produk 5.jpeg" alt="Produk 5" />
+                    <h3>pinky boys</h3>
+                    <p class="price">Rp 300.000</p>
+                    <p class="description">memberikan daya tarik yang lebih terutama kepada wanita.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Kontak Section -->
+        <section id="kontak" style="display:none;">
+            <h2>customer service</h2>
+            <form class="contact-form" action="#" method="post">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required />
+
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini" required></textarea>
+
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Kontak kami: email@tokoonline.com | 0812-3456-7890 | Jl. the hell No.666</p>
+        </div>
+    </footer>
+</body>
+</html>
