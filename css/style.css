@@ -1,0 +1,299 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #000000, #808080, #800000);
+    color: #f0f0f0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #440303;
+    color: white;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    margin-left: 1rem;
+    font-size: 1.8rem;
+}
+
+nav {
+    margin-top: 0.5rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-left: 1rem;
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    background-color: #530310;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Product List - Home */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.product-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.price {
+    color: #3a012e;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #1f0505;
+}
+
+/* Product Detail - Produk page */
+.product-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+    background-color: rgb(17, 16, 16);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.product-detail img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.buy-button {
+    background-color: #8f0808;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #0e0f0f;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin-top: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-info {
+        min-width: 100%;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-left: 0;
+    }
+
+    header, footer {
+        text-align: center;
+    }
+}
+
+/* Fire effect for Home link */
+.fire-effect {
+    position: relative;
+    color: #ff4500;
+    font-weight: bold;
+    text-shadow:
+        0 0 5px #ff4500,
+        0 0 10px #ff4500,
+        0 0 20px #ff6347,
+        0 0 30px #ff6347,
+        0 0 40px #ff4500,
+        0 0 50px #ff4500,
+        0 0 60px #ff4500;
+    animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        text-shadow:
+            0 0 5px #ff4500,
+            0 0 10px #ff4500,
+            0 0 20px #ff6347,
+            0 0 30px #ff6347,
+            0 0 40px #ff4500,
+            0 0 50px #ff4500,
+            0 0 60px #ff4500;
+        color: #ff4500;
+    }
+    50% {
+        text-shadow:
+            0 0 10px #ff6347,
+            0 0 20px #ff4500,
+            0 0 30px #ff4500,
+            0 0 40px #ff6347,
+            0 0 50px #ff6347,
+            0 0 60px #ff4500,
+            0 0 70px #ff4500;
+        color: #ff6347;
+    }
+    100% {
+        text-shadow:
+            0 0 5px #ff4500,
+            0 0 10px #ff4500,
+            0 0 20px #ff6347,
+            0 0 30px #ff6347,
+            0 0 40px #ff4500,
+            0 0 50px #ff4500,
+            0 0 60px #ff4500;
+        color: #ff4500;
+    }
+}
+.hero {
+    background: linear-gradient(to right, #1f1f1f, #3d0000);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ff6347;
+    text-shadow: 0 0 5px #ff4500;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #eee;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    background-color: #ff4500;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #c0392b;
+}
